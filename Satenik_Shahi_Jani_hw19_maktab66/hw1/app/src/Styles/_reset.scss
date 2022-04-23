@@ -1,0 +1,51 @@
+* {
+  box-sizing: border-box;
+  font-family: "Nunito Sans", sans-serif;
+  padding: 0;
+  margin: 0;
+}
+body {
+  padding: 0;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+}
+li,
+ul {
+  list-style: none;
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+button {
+  all: unset;
+  cursor: pointer;
+  padding: 0.5%;
+  align-items: center;
+}
+a {
+  all: unset;
+  cursor: pointer;
+}
+img {
+  width: 100%;
+}
+input {
+  all: unset;
+}
+.body-bg {
+  &.light {
+    min-height: 100vh;
+    background-color: $light-bg;
+    color: $light-txt;
+
+  }
+
+  &.dark {
+    min-height: 100vh;
+    color: $dark-txt;
+    background-color: $dark-bg;
+  }
+}

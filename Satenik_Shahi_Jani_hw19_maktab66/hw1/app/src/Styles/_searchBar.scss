@@ -1,0 +1,38 @@
+.search{
+    width: 35%;
+    border-radius: 5px;
+    padding: 1% ;
+    display: flex;
+    position: relative;
+    box-shadow: rgba(0, 0, 0, 0.303) 0px 1px 4px;
+    input{
+        width: 88%;
+        margin-left: 2%;
+        padding: 1%;
+    }
+    &.light{
+        background-color: $light-el;
+        input{
+            color: $light-input;
+        }
+    }
+    &.dark{
+        background-color: $dark-el;
+        input{
+            color: $dark-txt;
+        }
+    }
+    .list-item{
+        width: 100%;
+        max-height: 25vh;
+        background-color: inherit;
+        overflow-y:auto;
+        position: absolute;
+        left: 0;
+        top:99.999%;
+    }
+    li{
+        padding: 2% 0;
+        border-bottom: rgba(0, 0, 0, 0.12) solid 0.01px ;
+    }
+}

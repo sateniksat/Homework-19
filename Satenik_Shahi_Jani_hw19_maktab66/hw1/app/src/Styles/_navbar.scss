@@ -1,0 +1,22 @@
+nav {
+  padding: 0 5%;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  .container {
+    align-items: center;
+    padding: 1.75% 0;
+    display: flex;
+    justify-content: space-between;
+  }
+  button:hover {
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+  &.light {
+    color: $light-txt;
+    background-color: $light-el;
+  }
+  &.dark {
+    color: $dark-txt;
+    background-color: $dark-el;
+  }
+}

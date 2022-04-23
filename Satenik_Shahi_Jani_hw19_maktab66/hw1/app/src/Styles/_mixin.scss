@@ -1,0 +1,59 @@
+// @mixin for-phone-only {
+//     @media (max-width: 599px) { @content; }
+//   }
+//   @mixin for-tablet-portrait-up {
+//     @media (min-width: 600px) { @content; }
+//   }
+//   @mixin for-tablet-landscape-up {
+//     @media (min-width: 900px) { @content; }
+//   }
+//   @mixin for-desktop-up {
+//     @media (min-width: 1200px) { @content; }
+//   }
+//   @mixin for-big-desktop-up {
+//     @media (min-width: 1800px) { @content; }
+//   }
+@mixin for-size($size) {
+    @if $size == phone-only {
+      @media (max-width: 599px) { @content; }
+    } @else if $size == tablet-portrait-up {
+      @media (min-width: 600px) { @content; }
+    } @else if $size == tablet-landscape-up {
+      @media (min-width: 900px) { @content; }
+    } @else if $size == desktop-up {
+      @media (min-width: 1200px) { @content; }
+    } @else if $size == big-desktop-up {
+      @media (min-width: 1800px) { @content; }
+    }
+  }
+  $breakpoints: (
+  'small':  767px,
+  'medium': 992px,
+  'large':  1200px
+) !default;
+$breakpoints2: (
+  'small':  ( min-width:  767px ),
+  'medium': ( min-width:  992px ),
+  'large':  ( min-width: 1200px )
+) !default;
+
+/// Mixin to manage responsive breakpoints
+/// @author Kitty Giraudel
+/// @param {String} $breakpoint - Breakpoint name
+/// @require $breakpoints
+// @mixin respond-to($breakpoint) {
+//     // If the key exists in the map
+//     @if map-has-key($breakpoints, $breakpoint) {
+//       // Prints a media query based on the value
+//       @media #{inspect(map-get($breakpoints, $breakpoint))} {
+//         @content;
+//       }
+//     }
+   
+//     // If the key doesn't exist in the map
+//     @else {
+//       @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+//           + "Available breakpoints are: #{map-keys($breakpoints)}.";
+//     }
+//   }
+  

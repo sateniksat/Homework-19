@@ -1,0 +1,23 @@
+.countryCards{
+    width: 100%;
+    .container{
+        margin: 3% 5%;
+        display: flex;
+        flex-direction: column;
+    }
+    .gridCards{
+        width: 100%;
+        display: grid;
+        grid-template-columns: 20%  20%  20%  20%;
+        gap: 12vh;
+        // row-gap: 1%;
+    }
+    p{
+        font-size: 14px;
+    }
+}
+.tools{
+    margin-bottom: 5%;
+    display: flex;
+    justify-content: space-between;
+}
