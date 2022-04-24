@@ -1,0 +1,55 @@
+.region {
+  width: 15%;
+  border-radius: 5px;
+  padding: 1%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  box-shadow: rgba(0, 0, 0, 0.303) 0px 1px 4px;
+  @include for-size(tablet) {    
+    width:50% ;
+ }
+ @include for-size(phone) {    
+   width:50% ;
+ }
+  input {
+    width: 88%;
+    margin-left: 2%;
+    padding: 1%;
+  }
+  input:disabled {
+    color: inherit;
+  }
+  &.light {
+    background-color: $light-el;
+    input {
+      color: $light-input;
+    }
+  }
+  &.dark {
+    background-color: $dark-el;
+    input {
+      color: $dark-txt;
+    }
+  }
+  .list-item {
+    width: 100%;
+    border-radius: 5px;
+    background-color: inherit;
+    overflow-y: auto;
+    position: absolute;
+    box-shadow: rgba(0, 0, 0, 0.303) 0px 1px 4px;
+    left: 0;
+    top: 102%;
+    z-index: 1;
+  }
+  li {
+    width: 100%;
+    padding: 3% 12%;
+    cursor: pointer;
+    // border-bottom: rgba(0, 0, 0, 0.12) solid 0.01px ;
+  }
+  li:hover {
+    background-color: #6f6e6e61;
+  }
+}

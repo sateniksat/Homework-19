@@ -5,6 +5,14 @@
     display: flex;
     position: relative;
     box-shadow: rgba(0, 0, 0, 0.303) 0px 1px 4px;
+    @include for-size(phone) {    
+        width:85% ;
+        margin-bottom:2% ;
+      }
+      @include for-size(tablet) {    
+        width:70% ;
+        margin-bottom:2% ;
+     }
     input{
         width: 88%;
         margin-left: 2%;
@@ -29,10 +37,13 @@
         overflow-y:auto;
         position: absolute;
         left: 0;
-        top:99.999%;
+        top:102%;
+        box-shadow: rgba(0, 0, 0, 0.303) 0px 1px 4px;
+        z-index: 1;
     }
     li{
         padding: 2% 0;
+        cursor: pointer;
         border-bottom: rgba(0, 0, 0, 0.12) solid 0.01px ;
     }
 }

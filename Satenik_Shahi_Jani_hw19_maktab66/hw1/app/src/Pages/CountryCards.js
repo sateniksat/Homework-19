@@ -5,7 +5,8 @@ import Searchbar from "../Components/Searchbar";
 import { DataContext } from "../Context/DataContext";
 
 export default function CountryCards() {
-  const {data}=useContext(DataContext);
+  const {filter}=useContext(DataContext);
+  // const {data,filter}=useContext(DataContext);
   return (
     <div className="countryCards">
       <div className="container">
@@ -14,7 +15,7 @@ export default function CountryCards() {
           <RegionFilter/>
         </div>
         <div className="gridCards">
-          {data.map(item=>{
+          {filter.map(item=>{
             return <Card
             key={item.alpha3Code}
             name={item.name}

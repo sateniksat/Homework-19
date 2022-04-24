@@ -7,7 +7,7 @@ export default function Searchbox() {
   const [typed, setTyped] = useState();
   const [items, setItems] = useState([]);
   const navigate = useNavigate();
-  const { data,theme } = useContext(DataContext);
+  const { data,theme ,setFilter} = useContext(DataContext);
   const handleInput = () => {
     const includes = data.filter((item) => {
       return item.name.toLowerCase().includes(typed);
@@ -30,6 +30,7 @@ export default function Searchbox() {
       const includes = data.filter((item) => {
         return item.name.toLowerCase().includes(input);
       });
+      setFilter(includes);
       setItems(includes);
       // console.log("hi");
       // console.log(items);

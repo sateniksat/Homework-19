@@ -6,13 +6,13 @@ export default function Country() {
   const params = useParams();
   const { data } = useContext(DataContext);
   let navigate = useNavigate();
-  console.log(params);
-  console.log(params.countryID);
+  // console.log(params);
+  // console.log(params.countryID);
   function findCounrty(alphaName) {
     return data.find((item) => item.alpha3Code === alphaName);
   }
   const country = findCounrty(params.countryID);
-  console.log(country);
+  // console.log(country);
 
   return (
     <div className={`country-page`}>
@@ -53,7 +53,7 @@ export default function Country() {
                   {country.capital}
                 </p>
               </div>
-              <div>
+              <div className="column">
                 <p>
                   <b>Top Level Domain:</b>
                   {country.topLevelDomain.map((item, index) => {
@@ -79,8 +79,11 @@ export default function Country() {
               </div>
             </div>
             <div className="border">
-              <p>
+              <div>
                 <b>Border Counteries:</b>
+                <div className="border">
+
+                
                 {country.borders?.map((item) => {
                   return (
                     <Link to={`/${item}`} key={item}>
@@ -88,7 +91,8 @@ export default function Country() {
                     </Link>
                   );
                 })}
-              </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>

@@ -5,6 +5,9 @@ export const DataContext = createContext();
 export default function DataContextProvider({ children }) {
   const [data, setdata] = useState([]);
   const [theme,setTheme]=useState("light");
+  const [filter,setFilter]=useState([]);
+
+
   const handleTheme=()=>{
     const newTheme= theme==="light" ? "dark": "light";
     setTheme(newTheme);
@@ -17,11 +20,12 @@ export default function DataContextProvider({ children }) {
         // console.log(res);
         // console.log(res.data);
         setdata(res.data);
+        setFilter(res.data)
       })
       .catch((error) => alert(error));
   }, []);
 
   return (
-    <DataContext.Provider value={{ data ,theme,handleTheme}}>{children}</DataContext.Provider>
+    <DataContext.Provider value={{ data ,theme,handleTheme,setFilter,filter}}>{children}</DataContext.Provider>
   );
 }

@@ -1,23 +1,35 @@
-.countryCards{
-    width: 100%;
-    .container{
-        margin: 3% 5%;
-        display: flex;
-        flex-direction: column;
-    }
-    .gridCards{
-        width: 100%;
-        display: grid;
-        grid-template-columns: 20%  20%  20%  20%;
-        gap: 12vh;
-        // row-gap: 1%;
-    }
-    p{
-        font-size: 14px;
-    }
-}
-.tools{
-    margin-bottom: 5%;
+.countryCards {
+  width: 100%;
+  .container {
+    margin: 3% 5%;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+  }
+  .gridCards {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20%;
+    gap: 12vh;
+    // row-gap: 1%;
+    @include for-size(tablet) {
+      grid-template-columns: 33% 33% 33%;
+      gap: 4vh;
+    }
+    @include for-size(phone) {
+      grid-template-columns: 95%;
+      column-gap: 0;
+      row-gap: 4vh;
+    }
+  }
+  p {
+    font-size: 14px;
+  }
+}
+.tools {
+  margin-bottom: 5%;
+  display: flex;
+  justify-content: space-between;
+  @include for-size(tablet) {
+    flex-direction: column;
+  }
 }

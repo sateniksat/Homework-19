@@ -1,11 +1,24 @@
 nav {
   padding: 0 5%;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  @include for-size(tablet) {
+    padding: 2% 5%;
+   }
+  .forsize{
+    @include for-size(tablet) {
+      font-size: medium;
+     }
+  }
   .container {
     align-items: center;
     padding: 1.75% 0;
     display: flex;
     justify-content: space-between;
+  }
+  button{
+    @include for-size(tablet) {
+      font-size: small;
+     }
   }
   button:hover {
     border-radius: 5px;
@@ -19,4 +32,5 @@ nav {
     color: $dark-txt;
     background-color: $dark-el;
   }
+
 }
