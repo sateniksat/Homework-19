@@ -17,9 +17,9 @@ const root = createRoot(rootElement);
 
 root.render(
   // <StrictMode>
-  <BrowserRouter>
-    <DataContextProvider>
-      <EditContextProvider>
+  <DataContextProvider>
+    <EditContextProvider>
+      <BrowserRouter>
         <Routes>
           <Route path={"/"} element={<App />}>
             <Route index element={<Home />} />
@@ -42,8 +42,8 @@ root.render(
         /> */}
           </Route>
         </Routes>
-      </EditContextProvider>
-    </DataContextProvider>
-  </BrowserRouter>
+      </BrowserRouter>
+    </EditContextProvider>
+  </DataContextProvider>
   // </StrictMode>
 );

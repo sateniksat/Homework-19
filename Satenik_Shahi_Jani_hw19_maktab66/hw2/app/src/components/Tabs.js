@@ -6,39 +6,62 @@ import TabList from "@mui/lab/TabList";
 import TabPanel from "@mui/lab/TabPanel";
 import Welcome from "./Welcome";
 import GutterlessList from "./List";
-// import { DataContext } from "../context/DataContext";
+import { DataContext } from "../context/DataContext";
+import { EditContext } from "../context/EditContext";
 
-// const {data,newdata,setnewdata}=React.useContext(DataContext);
 export default function LabTabs() {
+  const { edit, setedit, sign, setsign } =React.useContext(EditContext);
+
   const [value, setValue] = React.useState("1");
+  const { data, newdata, setnewdata } = React.useContext(DataContext);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-
+  // function filteringLIST(category){
+  //   return newdata.filter((item) => item.category === category);
+  // }
   return (
     <TabContext value={value}>
       <Box sx={{ display: "flex", flexDirection: "row" }}>
         <Box width={"50%"} sx={{ textAlign: "center" }}>
           <TabPanel value="1">
-            <h5>Web Design</h5>
-            <GutterlessList item={"WebDesign"} />
-            <h5>Front-End</h5>
-            <GutterlessList item={"FrontEnd"} />
-            <h5>Back-End</h5>
-            <GutterlessList item={"BackEnd"} />
+            <h3 onClick={()=>{setsign(0)}}>Web Design</h3>
+            <GutterlessList
+              category={"WebDesign"}
+              // filterlist={filteringLIST("WebDesign")}
+            />
+            <h3 onClick={()=>{setsign(0)}}>Front-End</h3>
+            <GutterlessList
+              category={"FrontEnd"}
+              // filterlist={filteringLIST("FrontEnd")}
+            />
+            <h3 onClick={()=>{setsign(0)}}>Back-End</h3>
+            <GutterlessList
+              category={"BackEnd"}
+              // filterlist={filteringLIST("BackEnd")}
+            />
           </TabPanel>
           <TabPanel value="2">
-            <h5>Web Design</h5>
-            <GutterlessList item={"WebDesign"} />
+            <h3 onClick={()=>{setsign(0)}}>Web Design</h3>
+            <GutterlessList
+              category={"WebDesign"}
+              // filterlist={filteringLIST("WebDesign")}
+            />
           </TabPanel>
           <TabPanel value="3">
-            <h5>Front-End</h5>
-            <GutterlessList item={"FrontEnd"} />
+            <h3 onClick={()=>{setsign(0)}}>Front-End</h3>
+            <GutterlessList
+              category={"FrontEnd"}
+              // filterlist={filteringLIST("FrontEnd")}
+            />
           </TabPanel>
           <TabPanel value="4">
-            <h5>Back-End</h5>
-            <GutterlessList item={"BackEnd"} />
+            <h3 onClick={()=>{setsign(0)}}>Back-End</h3>
+            <GutterlessList
+              category={"BackEnd"}
+              // filterlist={filteringLIST("BackEnd")}
+            />
           </TabPanel>
         </Box>
         <Box width={"50%"} sx={{ textAlign: "center" }}>

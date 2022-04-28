@@ -3,6 +3,7 @@ import { EditContext } from "../context/EditContext";
 import Edit from "./Edit";
 
 export default function Welcome() {
+  
   const { edit, setedit, sign, setsign } = useContext(EditContext);
   return (
     <>
@@ -19,6 +20,15 @@ export default function Welcome() {
           <div style={{ alignItems: "center" }}>
             <div>edit</div>
             <Edit />
+          </div>
+        )}
+      </div>
+      <div>
+        {sign === 2 && (
+          <div style={{ alignItems: "center" }}>
+            <h2>{edit.name}</h2>
+            {/* <p>{edit.category}</p> */}
+            <p>{edit.description}</p>
           </div>
         )}
       </div>

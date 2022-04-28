@@ -5,6 +5,7 @@ import MenuItem from "@mui/material/MenuItem";
 import { useContext } from "react";
 import { EditContext } from "../context/EditContext";
 import Button from "@mui/material/Button";
+import { DataContext } from "../context/DataContext";
 
 const currencies = [
   {
@@ -21,15 +22,27 @@ const currencies = [
   }
 ];
 
-export default function Add() {
-  // const { edit, setedit, sign, setsign } = useContext(EditContext);
-  const [currency, setCurrency] = React.useState("");
-  // const [localedit,setlocaledit]=React.useState(edit)
+export default function Add({ handleClose }) {
+  const { edit, setedit, sign, setsign } = useContext(EditContext);
+  const { data, newdata, setnewdata } = React.useContext(DataContext);
 
-  const handleChange = (event) => {
-    setCurrency(event.target.value);
+  const [currency, setCurrency] = React.useState({});
+  // const [localedit,setlocaledit]=React.useState(prevState=>edit)
+
+  const handleChange = (e) => {
+    // setCurrency(event.target.value);
+    setCurrency({ ...currency, [e.target.name]: e.target.value });
+    console.log(currency);
   };
-
+  const handleADD = () => {
+    setCurrency({ ...currency, id: newdata.length++ });
+    const find = currency;
+    setnewdata([...newdata, find]);
+    console.log(newdata);
+    handleClose();
+    // setCurrency({});
+    setsign(0);
+  };
   return (
     <Box
       component="form"
@@ -55,17 +68,22 @@ export default function Add() {
           helperText="Some important text"
           variant="standard"
           label="title"
-          // defaultValue={localedit.name}
+          name={"name"}
+          required
+          onChange={(e) => handleChange(e)}
+          // value={currency.name}
         />
         <TextField
           id="standard-select-currency"
           select
+          required
           label="Skills"
-          // value={localedit.category}
+          name={"category"}
+          // value={currency.category}
           // SelectProps={{
           //   native: true,
           // }}
-          onChange={handleChange}
+          onChange={(e) => handleChange(e)}
           helperText="Please select your currency"
           variant="standard"
         >
@@ -78,14 +96,23 @@ export default function Add() {
         <TextField
           id="standard-multiline-static"
           label="Description"
+          name={"description"}
           multiline
           rows={4}
-          // defaultValue={localedit.description}
+          onChange={(e) => handleChange(e)}
+          // value={currency.description}
           // value={edit.description}
           variant="standard"
         />
       </Box>
-      <Button variant="text">Add</Button>
+      <Button
+        variant="text"
+        onClick={() => {
+          handleADD();
+        }}
+      >
+        Add
+      </Button>
     </Box>
   );
 }

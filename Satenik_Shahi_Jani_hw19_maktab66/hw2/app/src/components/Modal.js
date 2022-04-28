@@ -38,7 +38,7 @@ export default function KeepMountedModal() {
   return (
     <div>
       {/* <Button onClick={handleOpen}>Open modal</Button> */}
-      <StyledFab onClick={handleOpen} color="secondary" aria-label="add">
+      <StyledFab onClick={handleOpen} color="rgb(255, 181, 2)" aria-label="add">
         <AddIcon />
       </StyledFab>
       <Modal
@@ -55,7 +55,7 @@ export default function KeepMountedModal() {
           <Typography id="keep-mounted-modal-description" sx={{ mt: 2 }}>
             Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
           </Typography> */}
-          <Add />
+          <Add handleClose={handleClose} />
         </Box>
       </Modal>
     </div>
